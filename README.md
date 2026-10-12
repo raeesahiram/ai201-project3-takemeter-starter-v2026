@@ -103,17 +103,25 @@ The boundary case is a comment claiming "90% of Redditors would take a 250K deal
 
 **Where the posts came from:**
 
+Collected 200 public comments from the r/LivestreamFail comment feed. Each row
+keeps the full comment text and its direct Reddit permalink in `note`. One
+removed-comment placeholder was replaced with another public comment.
+
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+
+I labelled the first 20 comments cold. The remaining 180 received AI-generated
+first-pass labels, and I reviewed every comment against the taxonomy and
+corrected labels where needed.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `analysis` | 47 | 23.5% |
+| `hot_take` | 94 | 47.0% |
+| `reaction` | 59 | 29.5% |
+| **Total** | **200** | **100%** |
 
 **Three hard cases**
 
@@ -121,25 +129,36 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* “Statistically, black people are less likely to be literate. But
+> even more important: THEY ARE THE SAME RATES AS POOR PEOPLE OF ANY RACE.”
+> ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3lkm6/kai_tries_to_read/pfcwn4o/))
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`
 >
-> *I chose, because:*
+> *I chose `analysis` because* the comparison between literacy rates and
+> poverty is offered as evidence for the post's argument about race and
+> literacy. The heated closing does not erase that support.
 
 **2.**
-> *The post:*
+> *The post:* “She was uncomfortable, he pulled back, and was rightfully
+> called out for the strange behavior.” ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x0fl5t/noarmswhatley_makes_another_girl_uncomfortable/pfcuzt2/))
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`
 >
-> *I chose, because:*
+> *I chose `analysis` because* the comment grounds its judgment in specific
+> details about what happened in the clip and uses them to support its point
+> about boundaries, rather than relying only on a general opinion.
 
 **3.**
-> *The post:*
+> *The post:* “Well the important context is all that is chill had the girl
+> been of age. That is the question here, when in fact was he aware he was
+> speaking to a 15 year old?” ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x0pp1r/former_twitch_exec_calls_secrecy_over_dr/pfctt3o/))
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`
 >
-> *I chose, because:*
+> *I chose `hot_take` because* it raises a pointed question about what someone
+> knew, but gives no evidence about their awareness. The specific age alone
+> does not support an argument about what they knew.
 
 ---
 
@@ -183,6 +202,11 @@ of next unit's variance. -->
 - *What I changed:*
 
 **Pre-labelling disclosure:**
+
+An AI generated first-pass labels for the 180 rows marked
+`pre-labelled, checked` in `labels.csv`. I went back through every one against
+the written taxonomy and corrected 10 labels. The first 20 rows were labelled
+cold before that pre-labelling pass.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
