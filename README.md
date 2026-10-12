@@ -166,16 +166,20 @@ corrected labels where needed.
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate `2e-5`, batch size 16, max length 128,
+seed 42 (defaults; unchanged).
 
 **Anything I changed from the defaults, and why:**
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+None.
 
+**Split sizes:** 139 train / 31 validation / 30 test. Test counts: `analysis` 7,
+`hot_take` 14, `reaction` 9. `analysis` is one below the suggested 8-example
+rule of thumb, so its score may move noticeably across seeds.
+
+**Training device:** Apple Silicon GPU (MPS), PyTorch 2.14.1.
 
 
 ---
