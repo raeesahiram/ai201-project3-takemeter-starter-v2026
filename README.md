@@ -42,7 +42,11 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-This project classifies public comments from r/LivestreamFail. The clip thread provides context, but labels are based on the comment text, not on watching the clip.
+This project trains a text classifier on public comments from r/LivestreamFail.
+It sorts each comment into `analysis`, `hot_take`, or `reaction` using the
+written taxonomy below. The model sees the comment text only; the linked clip
+and surrounding thread provide context to a human labeler but are not model
+inputs.
 
 
 ---
@@ -195,15 +199,23 @@ rule of thumb, so its score may move noticeably across seeds.
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Collect at least 200 public examples and keep the full
+  text. After checking the project instructions, I clarified that the dataset
+  should contain comments, not submission titles.
+- *What came back:* AI gathered 200 non-deleted comments from the public
+  r/LivestreamFail comment feed and kept a direct permalink for each.
+- *What I changed:* I required the labels to be left blank for the cold-labeling
+  pass, then later replaced one removed-comment placeholder with another public
+  comment.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Label the remaining 180 comments, allowing first-pass
+  pre-labeling but requiring every suggestion to be checked and corrected.
+- *What came back:* AI suggested a label for each comment using the three
+  written definitions and decision rules.
+- *What I changed:* I reviewed every suggestion against the taxonomy, changed
+  10 labels, and marked the reviewed pre-labeled rows in `labels.csv`.
 
 **Pre-labelling disclosure:**
 
