@@ -51,63 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+The model reaches at least **0.60 accuracy on the held-out set in each of the three seeds**.
 
-
-
-**Why this target:**
-
-
+**Why this target:** With three labels, a uniform guess is about 0.33. Requiring 0.60 makes the classifier meaningfully useful, while leaving room for short, sarcastic comments that need context.
 
 ---
 
-## 2.
+## 2. Macro F1
 
-<!-- Your criterion. -->
+The model reaches at least **0.55 macro F1 on the held-out set in each of the three seeds**.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Macro F1 gives `analysis`, `hot_take`, and `reaction` equal weight, so frequent quick reactions cannot hide poor performance on the less common labels. I chose a moderate target because I have not collected the final label counts yet.
 
 ---
 
-## 3.
+## 3. Per-label performance
 
-<!-- Your criterion. -->
+Every label has an F1 of at least **0.45 on the held-out set in each of the three seeds**.
 
-
-
-**Why this target:**
-
-
+**Why this target:** I want every kind of comment to be learnable, not just the easiest label. With about 30 held-out comments, each label's score can move noticeably from a few examples, so 0.45 is a minimum useful floor rather than a near-perfect demand.
 
 ---
 
-## 4.
+## 4. Label balance
 
-<!-- Your criterion. -->
+Each label makes up between **20% and 50%** of the 200 labeled comments (40 to 100 comments per label).
 
-
-
-**Why this target:**
-
-
+**Why this target:** Short reactions and jokes are common in the threads I read and could easily dominate. Keeping every label above 20% gives it examples to learn from; keeping each below 50% stops one label from becoming most of the dataset.
 
 ---
 
-## 5.
+## 5. Confidence
 
-<!-- Your criterion. -->
+On each seed, accuracy for the notebook's most-confident third of held-out comments is at least **0.70** and at least **0.10 higher** than accuracy for its least-confident third.
 
-
-
-**Why this target:**
-
-
+**Why this target:** A confidence score should distinguish safer predictions from uncertain ones. A 0.10 gap is a modest but checkable signal; the thirds are small, so I would not demand a much larger difference from this dataset.
 
 ---
 
