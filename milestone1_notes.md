@@ -10,9 +10,6 @@ is in the top-level comments.
 
 ## Candidate distinctions
 
-> Status: hypotheses, not yet checked against the 30–40 posts read for this
-> milestone. Confirm, cut, or rewrite each one against real comments.
-
 1. **Some comments name something checkable. Most don't.** A timestamp, a
    viewer or sub count, a date, a past stream or an earlier clip — versus no
    evidence at all.
