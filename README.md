@@ -42,6 +42,7 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+This project classifies public comments from r/LivestreamFail. The clip thread provides context, but labels are based on the comment text, not on watching the clip.
 
 
 ---
@@ -54,33 +55,42 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `analysis`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** Makes a claim and supports it with a specific, independently checkable fact, source, or quote.
 
 **Example 1:**
->
+> "There's a national hotline and opt in program to ban yourself from gambling..." ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3d7sl/comment/pfa0mzi/))
 
 **Example 2:**
->
+> "at least hes not like train going full gaslight mode saying hes an anti-gambling streamer" ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3d7sl/comment/pfaw6f9/))
+
+### `hot_take`
+
+**Definition:** Makes a confident judgment or claim without offering specific, checkable support; it might be true, but no evidence is given.
+
+**Example 1:**
+> "They've gone broke and need attention." ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3ne9l/comment/pfcq1cd/))
+
+**Example 2:**
+> "People still give this guy relevancy?" ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3d7sl/comment/pfa25ve/))
+
+### `reaction`
+
+**Definition:** Gives an immediate feeling, joke, or expression about the clip or discussion without making a supported argument.
+
+**Example 1:**
+> "standard Ronnie always enjoyable" ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3ne9l/comment/pfcmvxp/))
+
+**Example 2:**
+> "Guy has a jawline of a reverse letter c though." ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3ne9l/comment/pfcorr6/))
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `analysis` and `hot_take`
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+The boundary case is a comment claiming "90% of Redditors would take a 250K deal..." ([comment](https://www.reddit.com/r/LivestreamFail/comments/1x3d7sl/comment/pfa3v3d/)). A number alone is not evidence: use `analysis` only when a concrete fact, source, or quote can be checked. If the support is missing, use `hot_take`, even when the claim sounds plausible or the tone is heated.
 
 
 
